@@ -1,0 +1,99 @@
+<html lang="pt-br"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .calculator {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    input {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    .buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Calculadora Simples</h1>
+    <input type="text" id="number1" placeholder="Número 1">
+    <input type="text" id="number2" placeholder="Número 2">
+    <div class="buttons">
+      <button onclick="somar()">Somar</button>
+      <button onclick="subtrair()">Subtrair</button>
+      <button onclick="multiplicar()">Multiplicar</button>
+      <button onclick="dividir()">Dividir</button>
+      <button onclick="limpar()">Limpar</button>
+    </div>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function somar() {
+      var num1 = parseFloat(document.getElementById('number1').value);
+      var num2 = parseFloat(document.getElementById('number2').value);
+      var resultado = num1 + num2;
+      document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado;
+    }
+
+    function subtrair() {
+      var num1 = parseFloat(document.getElementById('number1').value);
+      var num2 = parseFloat(document.getElementById('number2').value);
+      var resultado = num1 - num2;
+      document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado;
+    }
+
+    function multiplicar() {
+      var num1 = parseFloat(document.getElementById('number1').value);
+      var num2 = parseFloat(document.getElementById('number2').value);
+      var resultado = num1 * num2;
+      document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado;
+    }
+
+    function dividir() {
+      var num1 = parseFloat(document.getElementById('number1').value);
+      var num2 = parseFloat(document.getElementById('number2').value);
+      if (num2 === 0) {
+        document.getElementById('resultado').innerHTML = 'Erro: Divisão por zero!';
+      } else {
+        var resultado = num1 / num2;
+        document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado;
+      }
+    }
+
+    function limpar() {
+      document.getElementById('number1').value = '';
+      document.getElementById('number2').value = '';
+      document.getElementById('resultado').innerHTML = '';
+    }
+  </script>
+</body>
+</html>
